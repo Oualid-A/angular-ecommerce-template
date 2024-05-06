@@ -472,18 +472,20 @@ table {
 }
 
 .product__banner {
-  padding: 0.625rem 0.75rem 0.75rem;
+  padding: 2.625rem 0.75rem 0.75rem;
 }
 
 .product__banner,
 .product__images {
   position: relative;
+  width: 70%;
+  object-fit: contain;
+  margin: auto;
 }
 
 .product__images {
   display: block;
   overflow: hidden;
-  border-radius: 1.25rem;
 }
 
 .product__img {

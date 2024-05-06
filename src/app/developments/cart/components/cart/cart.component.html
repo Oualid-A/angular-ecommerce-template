@@ -26,8 +26,8 @@
           <div *ngFor="let item of cart" class="cart-item">
             <div class="row">
               <div style="" class="col-md-7 center-item">
-                <img [src]="'assets/img/'+item?.productImagePath"
-                     [alt]="item?.productImagePath">
+                <img [src]="item?.image"
+                     [alt]="item?.image">
 
                 <h5>{{ item.name }}<br> ( {{ item.price }} MAD )</h5>
               </div>

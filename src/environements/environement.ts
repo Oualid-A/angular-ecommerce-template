@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  appUrl: 'http://localhost:9090/api/',
+  appUrl: 'https://fakestoreapi.com/',
   angularUrl: 'http://localhost:4200',
   client_id: 'admin-cli',
   grant_type: 'password',

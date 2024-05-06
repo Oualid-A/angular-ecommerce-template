@@ -17,7 +17,7 @@
             <a [routerLink]="'/products/singleProduct/'+product.id"
                class="product__images">
               <img
-                [src]="'assets/img/'+product?.productImagePath"
+                [src]="product?.image"
                 [alt]="product?.productImagePath"
                 class="product__img default"
               />

@@ -8,7 +8,7 @@ import {HttpClient, HttpContext} from "@angular/common/http";
 })
 export class CategoriesService {
 
-  private url: string = `${environment.appUrl}categories`;
+  private url: string = `${environment.appUrl}products/categories`;
 
   constructor(private http: HttpClient) {
   }

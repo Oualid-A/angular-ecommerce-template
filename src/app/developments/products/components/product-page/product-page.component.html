@@ -7,7 +7,7 @@
 
         <div class="details__small-images grid">
           <!-- Loop through productImages if available -->
-          <img *ngFor="let image of product.productImages" [src]="'assets/img/' + image" [alt]="product.name"
+          <img *ngFor="let image of product.image" [src]="image" [alt]="product.name"
                class="details__small-img"/>
         </div>
       </div>
