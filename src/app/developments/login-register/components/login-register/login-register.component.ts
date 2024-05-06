@@ -29,12 +29,12 @@ export class LoginRegisterComponent {
 
   createRegistrationForm() {
     this.registerForm = this.formBuilder.group({
-      username: ['Rachido', Validators.required],
-      password: ['Rachid123', Validators.required],
-      confirmPassword: ['Rachid123', Validators.required],
-      email: ['Rachid123@gmail.com', [Validators.required, Validators.email]],
-      firstName: ['Rachid123', Validators.required],
-      lastName: ['Rachid123', Validators.required],
+      username: ['Oualid-A', Validators.required],
+      password: ['Oualid1234', Validators.required],
+      confirmPassword: ['Oualid1234', Validators.required],
+      email: ['oualid.achrif@gmail.com', [Validators.required, Validators.email]],
+      firstName: ['Oualid', Validators.required],
+      lastName: ['Achrif', Validators.required],
       enabled: [true],
     });
   }
