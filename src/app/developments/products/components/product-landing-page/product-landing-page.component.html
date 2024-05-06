@@ -1,0 +1,41 @@
+<!--=============== MAIN ===============-->
+<main class="main">
+  <!--=============== HOME  SLIDE===============-->
+  <app-slide/>
+
+  <!--=============== CATEGORIES ===============-->
+  <app-categories-list [categoriesList]="categoriesList"></app-categories-list>
+
+  <!--=============== PRODUCTS ===============-->
+
+  <app-product-list
+    [products]="productsList"
+    [isPaginationShown]="false"
+    [isViewAllProductShown]="true"
+    [GreenTitle]="'Our'"
+    [BlackTitle]="'Products'">
+  </app-product-list>
+
+
+  <!--=============== DEALS ===============-->
+  <app-deals/>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

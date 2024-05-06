@@ -1,0 +1,98 @@
+<!--=============== HEADER ===============-->
+<header class="header nav-sticky">
+  <div class="header__top">
+    <div class="header__container container">
+      <div class="header__contact">
+        <span>(+01) - 2345 - 6789</span>
+
+        <span> Our location</span>
+      </div>
+
+      <p class="header__alert-news">
+        Super Value Deals - Save more with coupons
+      </p>
+
+      <a class="header__top-action cursorPointer" (click)="loginRegisterPage()">
+        Log In / Sign Up
+      </a>
+    </div>
+  </div>
+
+  <nav class="nav container">
+    <a (click)="gotToHome()" class="nav__logo cursorPointer">
+      <img src="../../../../../../assets/img/logo.svg" alt="" class="nav__logo-img"/>
+    </a>
+
+    <div class="nav__menu" id="nav-menu" #navMenu>
+      <div class="nav__menu-top">
+        <a href="../../../../../../index.html" class="nav__menu-logo">
+          <img src="../../../../../../assets/img/logo.svg" alt="">
+        </a>
+
+        <div class="nav__close" id="nav-close" #navClose>
+          <i class="fi fi-rs-cross-small"></i>
+        </div>
+      </div>
+
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a (click)="gotToHome()" class="nav__link active-link cursorPointer">Home</a>
+        </li>
+
+        <li class="nav__item">
+          <a routerLink="/categories" class="nav__link">Categories</a>
+        </li>
+
+        <li class="nav__item">
+          <a (click)="goToPackagesPage() " class="nav__link cursorPointer">Packages</a>
+        </li>
+
+        <li class="nav__item">
+          <a routerLink="/products/allProducts" class="nav__link">Products</a>
+        </li>
+
+        <li class="nav__item cursorPointer">
+          <a (click)="loginRegisterPage()" class="nav__link">LogIn / SignUp</a>
+        </li>
+      </ul>
+      <div class="header__search">
+        <input
+          (keydown.enter)="SearchProductsByName()"
+          [(ngModel)]="productName"
+          type="text"
+          placeholder="Search for items..."
+          class="form__input"
+        />
+
+        <button (click)="SearchProductsByName()" class="search__btn">
+          <img src="../../../../../../assets/img/search.png" alt=""/>
+        </button>
+      </div>
+      <!--      <div class="header__search">-->
+      <!--        <ng-select (change)="searchProductByCategory($event)" [items]="categoriesList" bindLabel="name" bindValue="id"-->
+      <!--                   placeholder="Search by category..."-->
+      <!--                   class="custom-select"></ng-select>-->
+      <!--      </div>-->
+    </div>
+
+    <div class="header__user-actions">
+      <a routerLink="wishlist" class="header__action-btn">
+        <img src="../../../../../../assets/img/icon-heart.svg" alt=""/>
+        <span class="count">{{wishlistProductCount}}</span>
+      </a>
+
+      <a routerLink="cart" class="header__action-btn">
+        <img src="../../../../../../assets/img/icon-cart.svg" alt=""/>
+        <span class="count">{{productCount}}</span>
+      </a>
+
+      <a routerLink="/profile" class="header__action-btn cursorPointer" *ngIf="isLoggedIn">
+        <img style="height: 30px; width: 30px" src="../../../../../../assets/img/profile.png" alt=""/>
+      </a>
+      <div class="header__action-btn nav__toggle" id="nav-toggle" #navToggle>
+        <img src="assets/img/menu-burger.svg" alt="">
+      </div>
+
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,237 @@
+
+/* Start Styling the searching form in packages and products pages*/
+/* Define your other styles here */
+.simpleInputCustomization {
+  border-radius: 4px;
+  min-width: 190px;
+  height: 35px;
+  background-color: white;
+  border: 1px solid #c2c9d6;
+  padding: 10px;
+  margin-left: 23px; /* Add spacing between the inputs */
+  margin-top: 10px;
+}
+
+
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+.accordion {
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto; /* Default margin */
+}
+
+
+.accordion-item {
+  background-color: #fff;
+  color: #111;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+}
+
+@media(max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+
+//
+
+
+.quantity-control__value {
+  margin: 0 15px;
+}
+
+.pointerCursor {
+  cursor: pointer;
+}
+
+.total-price {
+  padding-bottom: 15px;
+}
+
+.cart-item {
+  background-color: #F6F5FA;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 20px;
+}
+
+.center-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ng-dropdown-panel {
+  z-index: 9999; /* Adjust the value as needed */
+}
+
+.cart-item img {
+  width: 115px;
+
+}
+
+.cart-item h5 {
+  padding: 0 45px;
+}
+
+.cart-item .remove-item {
+  width: 25px !important;
+}
+
+.btn-default {
+  background-color: #fff;
+}
+
+.cart-item .form-control {
+  background-color: #F6F5FA;
+  border: none;
+  width: 65px;
+  border-radius: 10px !important;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.input-group {
+  width: unset;
+  flex-wrap: nowrap;
+}
+
+.status {
+  text-align: right;
+}
+
+.check-out {
+  //float: right;
+  padding: 10px 30px;
+  font-size: 19px;
+  background-color: #2FBE70;
+  border: none;
+}
+
+.alert.text-center[role="alert"] {
+  font-size: 1.2em; /* Adjust the font size as needed */
+  font-weight: bold;
+}
+
+.setupUpMargin {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .setupUpMargin {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+
+  .input-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+  }
+
+  .input-container > :not(i) {
+    width: calc(50% - 10px);
+    margin: 5px; /* Add spacing between the elements */
+  }
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 375px) and (max-height: 667px) {
+
+  .input-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Center items both horizontally and vertically */
+  }
+
+  .input-container > :not(i) {
+    width: calc(50% - 10px);
+    margin: 5px; /* Add spacing between the elements */
+  }
+}
+
+
+.input-container input {
+  min-width: 200px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.input-container ng-select {
+  min-width: 200px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.input-container button {
+  margin-left: 20px;
+  min-width: 70px;
+  margin-top: 10px;
+  height: 35px;
+}
+
+.input-container button i {
+  font-size: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* End Styling the searching form in packages and products pages*/

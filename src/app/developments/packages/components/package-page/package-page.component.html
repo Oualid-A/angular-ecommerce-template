@@ -1,0 +1,184 @@
+<!--=============== MAIN ===============-->
+<main class="main">
+  <section class="details section--lg" *ngIf="package">
+    <div class="details__container container grid">
+      <div class="details__group">
+        <img [src]="'assets/img/' + package.packageImagePath" [alt]="package.name" class="details__img"/>
+
+        <!--        <div class="details__small-images grid">-->
+        <!--          &lt;!&ndash; Loop through productImages if available &ndash;&gt;-->
+        <!--          <img *ngFor="let image of package.packageImagePath" [src]="'assets/img/' + image" [alt]="package.name"-->
+        <!--               class="details__small-img"/>-->
+        <!--        </div>-->
+      </div>
+
+      <div class="details__group">
+        <h3 class="details__title">{{ package.name }}</h3>
+        <p class="details__brand">Brands: <span>Bokeito Shop</span></p>
+
+        <div class="details__price flex">
+          <!-- Use product.price instead of hardcoding -->
+          <span class="new__price">{{ package.price }} MAD</span>
+          <span class="old__price">{{ package.comparePrice }} MAD</span>
+          <span class="save__price">25% Off</span>
+        </div>
+
+        <p class="short__description">{{ package?.description }}</p>
+
+        <!--        <ul class="product__list">-->
+        <!--          &lt;!&ndash; Loop through product meta information &ndash;&gt;-->
+        <!--          <li class="list__item flex" *ngFor="let meta of package.meta">-->
+        <!--            <i class="{{ meta.icon }}"></i> {{ meta.text }}-->
+        <!--          </li>-->
+        <!--        </ul>-->
+
+
+        <div class="details__action">
+          <input type="number" class="quantity" [(ngModel)]="selectedQuantity"/>
+
+          <input type="text" readonly [value]="selectedQuantity*package.price+' MAD'" class="quantity1"/>
+          <!--          <a  class="my-btn my-btn&#45;&#45;sm cursorPointer">Add to Cart</a>-->
+          <a (click)="placeOrder(package)" class="my-btn my-btn--sm cursorPointer">Buy now</a>
+
+          <!--          <a  class="details__action-btn cursorPointer"><i-->
+          <!--            class="fi fi-rs-heart"></i></a>-->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  DETAILS TAB-->
+  <!--=============== DETAILS TAB ===============-->
+  <section class="details__tab container">
+    <div class="detail__tabs">
+          <span class="detail__tab active-tab" data-target="#info">
+            Additional Info
+          </span>
+      <span class="detail__tab" data-target="#reviews">Reviews(3)</span>
+    </div>
+
+    <div class="details__tabs-content">
+      <div class="details__tab-content active-tab" content id="info">
+
+        <div class="details__action" [innerHTML]="packageHTMLContent"></div>
+
+      </div>
+
+      <div class="details__tab-content" content id="reviews">
+        <div class="reviews__container grid">
+          <div class="review__single">
+            <div>
+              <img
+                src="assets/img/avatar-1.jpg"
+                alt=""
+                class="review__img"
+              />
+              <h4 class="review__title">Jacky Chan</h4>
+            </div>
+
+            <div class="review__data">
+              <div class="review__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+
+              <p class="review__description">
+                Thank you very fast shipping from Poland only 3days.
+              </p>
+
+              <span class="review__date">December 4, 2020 at 3:12 pm</span>
+            </div>
+          </div>
+
+          <div class="review__single">
+            <div>
+              <img
+                src="assets/img/avatar-2.jpg"
+                alt=""
+                class="review__img"
+              />
+              <h4 class="review__title">Jacky Chan</h4>
+            </div>
+
+            <div class="review__data">
+              <div class="review__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+
+              <p class="review__description">
+                Great low price and works well.
+              </p>
+
+              <span class="review__date">December 4, 2020 at 3:12 pm</span>
+            </div>
+          </div>
+
+          <div class="review__single">
+            <div>
+              <img
+                src="assets/img/avatar-2.jpg"
+                alt=""
+                class="review__img"
+              />
+              <h4 class="review__title">Jacky Chan</h4>
+            </div>
+
+            <div class="review__data">
+              <div class="review__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+
+              <p class="review__description">
+                Authentic and Beautiful, Love these way more than ever
+                expected They are Great earphones
+              </p>
+
+              <span class="review__date">December 4, 2020 at 3:12 pm</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review__form">
+          <h4 class="review__form-title">Add a review</h4>
+
+          <div class="rate__product">
+            <i class="fi fi-rs-star"></i>
+            <i class="fi fi-rs-star"></i>
+            <i class="fi fi-rs-star"></i>
+            <i class="fi fi-rs-star"></i>
+            <i class="fi fi-rs-star"></i>
+          </div>
+
+          <form action="" class="form grid">
+                <textarea
+                  class="form__input textarea"
+                  placeholder="Write Comment"
+                ></textarea>
+
+            <div class="form__group grid">
+              <input type="text" placeholder="Name" class="form__input"/>
+
+              <input type="email" placeholder="Email" class="form__input"/>
+            </div>
+
+            <div class="form__btn">
+              <button class="btn">Submit Review</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

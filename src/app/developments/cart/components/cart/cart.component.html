@@ -1,0 +1,116 @@
+<section class="container">
+
+  <app-alert *ngIf="cartSize===0" [message]="'The Cart is Empty!'"></app-alert>
+
+  <div class="my-table__container" *ngIf="cartSize !== 0">
+    <div class="container">
+      <div class="cart">
+        <div class="col-md-12 col-lg-10 mx-auto">
+
+          <div class="cart__actions d-flex justify-content-center" style="margin-bottom: 10px">
+            <!-- Check if user is logged in -->
+            <ng-container *ngIf="isUserLoggedIn && cartSize!==0;">
+              <button (click)="placeOrder()" class="my-btn flex my-btn--md">
+                <i class="fi-rs-shopping-bag"></i> Send the Order
+              </button>
+            </ng-container>
+
+            <!-- Popup form for users who are not logged in -->
+            <ng-container *ngIf="!isUserLoggedIn && cartSize!==0;">
+              <button (click)="goToSaleContactForm()" class="my-btn flex my-btn--md">
+                <i class="fi-rs-shopping-bag"></i> Fill your contacts
+              </button>
+            </ng-container>
+          </div>
+
+          <div *ngFor="let item of cart" class="cart-item">
+            <div class="row">
+              <div style="" class="col-md-7 center-item">
+                <img [src]="'assets/img/'+item?.productImagePath"
+                     [alt]="item?.productImagePath">
+
+                <h5>{{ item.name }}<br> ( {{ item.price }} MAD )</h5>
+              </div>
+              <div class="col-md-5 center-item">
+                <div class="input-group number-spinner">
+                  <button (click)="decrementQuantity(item)"><i class="fas fa-minus"></i></button>
+                  <input readonly type="number" min="1" class="form-control text-center"
+                         [(ngModel)]="item.quantity"
+                         style="margin: 12px; background-color: white">
+                  <button (click)="incrementQuantity(item)"><i class="fas fa-plus"></i></button>
+                </div>
+                <h5> <span>{{ item.price * item.quantity }} MAD</span></h5>
+                <i (click)="deleteItem(item.id)" class="fa-solid fa-trash cursorPointer"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="row g-2">
+              <div class="col-6">
+                <h5>Subtotal: </h5>
+                <h5>Tax:</h5>
+                <h5>Total:</h5>
+              </div>
+              <div class="col-6 status">
+                <h5><span id="sub-total">{{totalPrice}} MAD</span></h5>
+                <h5><span id="tax-amount">0 MAD</span></h5>
+                <h5><span id="total-price">{{totalPrice}} MAD</span></h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 pt-4 pb-4">
+            <div class="cart__actions d-flex justify-content-center" style="margin-bottom: 10px">
+              <!-- Check if user is logged in -->
+              <ng-container *ngIf="isUserLoggedIn && cartSize!==0;">
+                <button (click)="placeOrder()" class="my-btn flex my-btn--md">
+                  <i class="fi-rs-shopping-bag"></i> Send the Order
+                </button>
+              </ng-container>
+
+              <!-- Popup form for users who are not logged in -->
+              <ng-container *ngIf="!isUserLoggedIn && cartSize!==0;">
+                <button (click)="goToSaleContactForm()" class="my-btn flex my-btn--md">
+                  <i class="fi-rs-shopping-bag"></i> Fill your contacts
+                </button>
+              </ng-container>
+            </div>
+
+
+            <div class="d-flex justify-content-center " *ngIf="cartSize!==0">
+              <div>
+                <div class="cart__shipping" style="margin-top: 30px">
+                  <h3 class="section__title">Apply Coupon</h3>
+
+                  <form action="" class="coupon__form form grid">
+                    <div class="form__group grid">
+                      <input
+                        style="min-width: 300px"
+                        type="text"
+                        class="form__input"
+                        placeholder="Enter Your Coupon"
+                      />
+
+                      <div class="form__my-btn">
+                        <button class="my-btn flex my-btn--sm">
+                          <i class="fi-rs-label"></i> Apply
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,46 @@
+<!--=============== MAIN ===============-->
+<main class="main">
+  <!--=============== ACCOUNTS ===============-->
+  <section class="accounts section--lg">
+    <div class="accounts__container container grid">
+      <div class="account__tabs">
+
+
+        <a class="account__tab" (click)="navigateTo('dashboard')" [class.active-tab]="activeTab === 'dashboard'">
+          <i class="fi fi-rs-settings-sliders"></i> Dashboard
+        </a>
+
+        <a class="account__tab" (click)="navigateTo('orders')"
+           [class.active-tab]="activeTab === 'orders'">
+          <i class="fi fi-rs-user"></i> Orders
+        </a>
+
+        <a class="account__tab" (click)="navigateTo('updateProfile')"
+           [class.active-tab]="activeTab === 'updateProfile'">
+          <i class="fi fi-rs-user"></i> Update Profile
+        </a>
+
+        <a class="account__tab" (click)="navigateTo('shippingAddress')"
+           [class.active-tab]="activeTab === 'shippingAddress'">
+          <i class="fi fi-rs-marker"></i> My Address
+        </a>
+
+        <a class="account__tab" (click)="navigateTo('changePassword')"
+           [class.active-tab]="activeTab === 'changePassword'">
+          <i class="fi fi-rs-user"></i> Change Password
+        </a>
+
+        <a (click)="logout()" class="account__tab">
+          <i class="fi fi-rs-exit"></i> Logout
+        </a>
+
+      </div>
+
+      <div class="tabs__content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </section>
+
+
+</main>
