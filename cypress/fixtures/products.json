@@ -1,0 +1,33 @@
+{
+    "products": [
+      {
+        "category": "Informatique",
+        "productPath": "/informatique-gaming",
+        "name": "imprimante CANON JET D'ENCRE PIXMA MG2540S",
+        "searchTerm": "Imprimante",
+        "quantity": 1
+      },
+      {
+        "category": "Informatique",
+        "productPath": "/informatique-gaming",
+        "name": "Ensemble clavier et souris Logitech COMBO MK235 FR",
+        "searchTerm": "Imprimante",
+        "quantity": 1
+      },
+      {
+        "category": "Sport",
+        "productPath": "/sport",
+        "name": "CREATINE 300g MONOHYDRATE",
+        "searchTerm": "Creatine",
+        "quantity": 2
+      },
+      {
+        "category": "TV-SON",
+        "productPath": "/tv-son-photo",
+        "name": "Tv Xiaomi A Pro 43 Pouces (L43M8-A2ME)",
+        "searchTerm": "Xiaomi",
+        "quantity": 1
+      }
+    ]
+  }
+  

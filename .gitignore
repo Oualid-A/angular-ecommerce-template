@@ -5,7 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
-
+cypress/reports
+cypress/screens
 # Node
 /node_modules
 npm-debug.log
